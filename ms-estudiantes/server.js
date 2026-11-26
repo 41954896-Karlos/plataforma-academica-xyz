@@ -8,9 +8,9 @@ app.use(express.json());
 
 app.use('/api/estudiantes', estudianteRoutes);
 
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 if (require.main === module) {
-    app.listen(PORT, () => console.log(`Microservicio Estudiantes corriendo en http://localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`Microservicio Estudiantes corriendo en puerto ${PORT}`));
 }
 
-module.exports = app; // Exportado para Supertest
+module.exports = app;
