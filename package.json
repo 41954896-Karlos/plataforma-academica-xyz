@@ -1,0 +1,10 @@
+{
+  "name": "plataforma-academica-xyz",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "concurrently -n \"ESTUDIANTES,CURSOS,GATEWAY\" -c \"blue,cyan,green\" \"npm --prefix ms-estudiantes start\" \"npm --prefix ms-cursos start\" \"npm --prefix api-gateway start\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

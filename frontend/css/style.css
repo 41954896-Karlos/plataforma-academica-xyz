@@ -1,0 +1,394 @@
+/* Paleta de colores: Azul, Celeste, Gris y Blanco */
+:root {
+    --azul-oscuro: #1a5276;
+    --azul-medio: #2471a3;
+    --celeste: #5dade2;
+    --celeste-suave: #ebf5fb;
+    --gris-fondo: #f4f6f8;
+    --gris-borde: #d5dbdb;
+    --gris-texto: #566573;
+    --blanco: #ffffff;
+    --shadow-sm: 0 6px 18px rgba(26, 82, 118, 0.08);
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Cuerpo base (Mobile First) */
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--gris-fondo);
+    color: #1c2833;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* Accesibilidad */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--celeste);
+    outline-offset: 2px;
+}
+
+.skip-link {
+    position: absolute;
+    top: -100%;
+    left: 1rem;
+    padding: 0.75rem 1.25rem;
+    background: var(--azul-oscuro);
+    color: var(--blanco);
+    border-radius: 0 0 12px 12px;
+    z-index: 1050;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.skip-link:focus {
+    top: 0;
+}
+
+/* Títulos */
+h1, h2, h3, h4, h5 {
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--azul-oscuro);
+}
+
+/* =========================================================
+   BARRA DE NAVEGACIÓN RESPONSIVA
+   ========================================================= */
+.navbar {
+    background-color: var(--blanco) !important;
+    border-bottom: 2px solid var(--celeste-suave);
+    box-shadow: 0 2px 10px rgba(26, 82, 118, 0.05);
+    padding: 0.75rem 0;
+}
+
+.navbar-brand {
+    font-weight: 700;
+    color: var(--azul-oscuro) !important;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-brand i {
+    color: var(--celeste);
+    font-size: 1.35rem;
+}
+
+.navbar-toggler {
+    border: 2px solid var(--celeste) !important;
+    border-radius: 10px;
+    padding: 0.4rem 0.65rem;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 3px rgba(93, 173, 226, 0.25);
+}
+
+.nav-link {
+    color: var(--gris-texto) !important;
+    font-weight: 500;
+    padding: 0.6rem 1rem !important;
+    border-radius: 10px;
+    transition: all 0.2s ease;
+    margin: 0.2rem 0;
+}
+
+.nav-link:hover {
+    color: var(--azul-oscuro) !important;
+    background-color: var(--celeste-suave);
+}
+
+.nav-link.active {
+    color: var(--blanco) !important;
+    background-color: var(--azul-oscuro);
+    font-weight: 600;
+}
+
+/* Menú colapsado en celulares y tablets */
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        background-color: var(--gris-fondo);
+        border: 1px solid var(--gris-borde);
+        border-radius: 14px;
+        padding: 0.75rem;
+        margin-top: 0.75rem;
+    }
+}
+
+/* =========================================================
+   SECCIÓN HERO RESPONSIVA
+   ========================================================= */
+.hero-section {
+    background: linear-gradient(135deg, var(--azul-oscuro) 0%, var(--azul-medio) 60%, var(--celeste) 100%);
+    color: var(--blanco);
+    padding: 2rem 1rem;
+    border-radius: 0 0 24px 24px;
+    margin-bottom: 1.75rem;
+    box-shadow: var(--shadow-sm);
+}
+
+.hero-section h1 {
+    color: var(--blanco);
+    font-size: 1.65rem;
+    line-height: 1.25;
+}
+
+.hero-section .lead {
+    color: var(--celeste-suave);
+    font-weight: 400;
+    font-size: 0.95rem;
+}
+
+/* =========================================================
+   TARJETAS Y FORMULARIOS
+   ========================================================= */
+.card {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-radius: 18px;
+    box-shadow: var(--shadow-sm);
+    padding: 1.25rem !important;
+}
+
+.card h2 {
+    color: var(--azul-oscuro);
+    border-bottom: 2px solid var(--celeste-suave);
+    padding-bottom: 0.65rem;
+    font-size: 1.15rem;
+}
+
+.card i {
+    color: var(--celeste);
+}
+
+.form-label {
+    color: var(--azul-oscuro);
+    margin-bottom: 0.3rem;
+}
+
+.form-control {
+    background-color: var(--gris-fondo);
+    border: 1px solid var(--gris-borde);
+    border-radius: 12px;
+    padding: 0.65rem 0.9rem;
+    font-size: 0.95rem;
+    color: #1c2833;
+    transition: all 0.2s ease;
+}
+
+.form-control:focus {
+    background-color: var(--blanco);
+    border-color: var(--celeste);
+    box-shadow: 0 0 0 4px rgba(93, 173, 226, 0.2);
+}
+
+/* =========================================================
+   BOTONES SÓLIDOS (SIN FONDO BLANCO)
+   ========================================================= */
+.btn-primary-custom {
+    background: linear-gradient(135deg, var(--azul-oscuro), var(--azul-medio)) !important;
+    border: none !important;
+    color: var(--blanco) !important;
+    font-weight: 600;
+    padding: 0.75rem 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(26, 82, 118, 0.25);
+    transition: all 0.2s ease;
+}
+
+.btn-primary-custom:hover {
+    background: linear-gradient(135deg, var(--azul-medio), var(--celeste)) !important;
+    color: var(--blanco) !important;
+    transform: translateY(-2px);
+}
+
+.btn-outline-secondary {
+    background-color: #7f8c8d !important;
+    border: none !important;
+    color: var(--blanco) !important;
+    font-weight: 600;
+    padding: 0.65rem 1.25rem;
+    border-radius: 12px;
+}
+
+.btn-outline-secondary:hover {
+    background-color: #616a6b !important;
+}
+
+.btn-outline-primary {
+    background-color: var(--celeste) !important;
+    border: none !important;
+    color: var(--blanco) !important;
+    border-radius: 8px;
+    padding: 0.4rem 0.65rem;
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--azul-medio) !important;
+}
+
+.btn-outline-primary i,
+.btn-outline-danger i {
+    color: var(--blanco) !important;
+}
+
+.btn-outline-danger {
+    background-color: #566573 !important;
+    border: none !important;
+    color: var(--blanco) !important;
+    border-radius: 8px;
+    padding: 0.4rem 0.65rem;
+}
+
+.btn-outline-danger:hover {
+    background-color: #2c3e50 !important;
+}
+
+/* =========================================================
+   TABLAS RESPONSIVAS
+   ========================================================= */
+.table-responsive {
+    border-radius: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.table {
+    min-width: 580px; /* Evita que las columnas se aplasten en celulares */
+    margin-bottom: 0;
+}
+
+.table thead th {
+    background-color: var(--azul-oscuro) !important;
+    color: var(--blanco) !important;
+    font-weight: 600;
+    font-size: 0.88rem;
+    border: none;
+    padding: 0.75rem;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    font-size: 0.9rem;
+    padding: 0.75rem;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: var(--celeste-suave);
+}
+
+.badge.bg-primary {
+    background-color: var(--celeste) !important;
+    color: var(--blanco);
+    font-weight: 600;
+    padding: 0.45rem 0.75rem;
+    border-radius: 10px;
+}
+
+.bg-credit {
+    background-color: var(--blanco);
+    border: 1px solid var(--gris-borde);
+    border-left: 5px solid var(--celeste);
+    border-radius: 16px;
+}
+
+/* =========================================================
+   MEDIA QUERIES (TABLETS Y ESCRITORIO)
+   ========================================================= */
+
+/* Tablets (>= 768px) */
+@media (min-width: 768px) {
+    .navbar-brand {
+        font-size: 1.25rem;
+    }
+
+    .hero-section {
+        padding: 2.75rem 2rem;
+        border-radius: 0 0 32px 32px;
+        margin-bottom: 2.25rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.2rem;
+    }
+
+    .hero-section .lead {
+        font-size: 1.05rem;
+    }
+
+    .card {
+        padding: 1.5rem !important;
+    }
+}
+
+/* Escritorio (>= 992px) */
+@media (min-width: 992px) {
+    .nav-link {
+        margin: 0 0.25rem;
+    }
+
+    .hero-section {
+        padding: 3.25rem 2.5rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2.6rem;
+    }
+}
+
+/* =========================================================
+   CARRUSEL RESPONSIVO DE IMÁGENES
+   ========================================================= */
+.carousel-wrapper {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid var(--gris-borde);
+    box-shadow: var(--shadow-sm);
+}
+
+.carousel-wrapper .carousel-item img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.carousel-wrapper .carousel-caption {
+    background: linear-gradient(135deg, rgba(26, 82, 118, 0.85), rgba(36, 113, 163, 0.8));
+    backdrop-filter: blur(4px);
+    border-radius: 14px;
+    padding: 0.85rem 1.25rem;
+    bottom: 16px;
+}
+
+.carousel-wrapper .carousel-caption h5 {
+    color: var(--blanco);
+    margin-bottom: 0.25rem;
+}
+
+.carousel-wrapper .carousel-caption p {
+    color: var(--celeste-suave);
+    margin-bottom: 0;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 768px) {
+    .carousel-wrapper .carousel-item img {
+        height: 320px;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-wrapper .carousel-item img {
+        height: 380px;
+    }
+}
