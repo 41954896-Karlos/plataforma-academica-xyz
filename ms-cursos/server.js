@@ -8,9 +8,9 @@ app.use(express.json());
 
 app.use('/api/cursos', cursoRoutes);
 
-const PORT = 3002;
+const PORT = process.env.PORT || 3002;
 if (require.main === module) {
-    app.listen(PORT, () => console.log(`Microservicio Cursos corriendo en http://localhost:${PORT}`));
+    app.listen(PORT, () => console.log(`Microservicio Cursos corriendo en puerto ${PORT}`));
 }
 
 module.exports = app;
